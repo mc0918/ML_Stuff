@@ -16,6 +16,7 @@
 
     <script>//MAKE SURE TO DO MULTIPLE INPUTS TO GET BEST FIT LINE TO APPEAR
 //USES LINEAR REGRESSION TO MAKE A LINE THAT BEST FITS USER INPUTTED DATA
+//Change the first 2 layers from leakyReLu to dense and add activation: sigmoid to the second to get a curved best fit line
 var xs = []; // starts empty, to be populated with .push
 
 var ys = []; // starts empty, to be populated with .push
@@ -24,14 +25,15 @@ var bestfit = []; // to be populated by tf.js
 //Create the model
 
 var model = tf.sequential();
-model.add(tf.layers.leakyReLU({
+model.add(tf.layers.dense({
   units: 128,
   inputShape: [1]
 })); // layer 1
 
-model.add(tf.layers.leakyReLU({
+model.add(tf.layers.dense({
   units: 128,
-  inputShape: [128]
+  inputShape: [128],
+  activation: "sigmoid"
 })); // layer 2
 
 model.add(tf.layers.dense({
