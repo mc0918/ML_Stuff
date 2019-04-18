@@ -64,7 +64,9 @@ for i in range(25):
     plt.yticks([])
     plt.grid(False)
     # matplotlib deprecated matplotlib.cm.binary so vsCode needs another colormap apparently, but it works in spyder
-    # this code uses matplotlib.cm.ScalarMappable MAKE SURE TO TEST TO SEE IF IT'LL WORK BECAUSE I HAVE NOT YET
+    # this code uses matplotlib.cm.ScalarMappable
+    # MAKE SURE TO TEST TO SEE IF IT'LL WORK BECAUSE I HAVE NOT YET
+    # MAYBE get_cmap WORKS? IT'S TYPED I DOWN BELOW SO DON'T FORGET THAT
     plt.imshow(train_images[i], cmap=plt.cm.ScalarMappable)
     plt.xlabel(class_names[train_labels[i]])
 plt.show()
@@ -116,7 +118,9 @@ def plot_image(i, predictions_array, true_label, img):
     plt.xticks([])
     plt.yticks([])
 
-    plt.imshow(img, cmap=plt.cm.binary)
+    # DOES get_cmap WORK? WHO KNOWS????
+
+    plt.imshow(img, cmap=plt.cm.get_cmap)
 
     predicted_label = np.argmax(predictions_array)
     if predicted_label == true_label:
