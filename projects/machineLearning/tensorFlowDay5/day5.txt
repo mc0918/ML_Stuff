@@ -1,0 +1,4 @@
+Today is regression day. We're aiming to predict the output of a continuous value rather than classify things like with previous days.
+The sample dataset provided is the Auto MPG dataset, and we'll be predicting fuel efficiencies of late 1970s-early 1980s cars.
+Using data provided (cylinders, Horsepower, weight, and actual MPG) this code builds a model to predict MPG given another one of the listed variables.
+ 
