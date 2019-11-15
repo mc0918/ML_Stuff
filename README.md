@@ -1,2 +1,2 @@
 # Machine Learning Stuff
-An experimental repository 
+Tensorflow exercises
